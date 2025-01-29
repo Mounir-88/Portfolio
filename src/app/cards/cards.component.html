@@ -1,0 +1,5 @@
+<div class="cards-container">
+  <div *ngFor="let project of projects" class="card" (click)="openDetails(project)">
+    <h3 class="project-title">{{ project.title }}</h3>
+  </div>
+</div>

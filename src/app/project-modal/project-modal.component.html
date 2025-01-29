@@ -1,0 +1,21 @@
+<div class="modal-overlay" *ngIf="isOpen">
+  <div class="modal-content">
+    <button class="close-btn" (click)="closeModal()">X</button>
+
+    <h2 class="modal-title">{{ projectName }}</h2>
+
+    <p class="modal-description">{{ projectDescription }}</p>
+
+    <img *ngIf="projectPhoto" [src]="projectPhoto" alt="Project Image" class="modal-photo" />
+
+    <video *ngIf="projectVideo" controls class="modal-video">
+      <source [src]="projectVideo" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="modal-links" *ngIf="projectDemo || projectRepo">
+      <a *ngIf="projectDemo" [href]="projectDemo" target="_blank" class="modal-link">View Demo</a>
+      <a *ngIf="projectRepo" [href]="projectRepo" target="_blank" class="modal-link">View Repository</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="projects-container">
+  <app-cards (openDetailsEvent)="openModal($event)"></app-cards>
+
+  <app-project-modal
+    [isOpen]="isModalOpen"
+    (close)="closeModal()"
+    [projectName]="modalData?.title ?? ''"
+    [projectDescription]="modalData?.description ?? ''"
+    [projectPhoto]="modalData?.photo ?? ''"
+    [projectVideo]="modalData?.video ?? ''"
+    [projectDemo]="modalData?.demoLink ?? ''"
+    [projectRepo]="modalData?.repoLink ?? ''">
+  </app-project-modal>
+</div>

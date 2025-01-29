@@ -1,0 +1,55 @@
+.home-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  padding: 2rem;
+  color: white;
+}
+
+.left-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-picture {
+  width: 80%;
+  max-width: 300px;
+}
+
+.right-section {
+  flex: 1;
+  padding: 1rem;
+}
+
+.name {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.intro {
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 110vh;
+  }
+
+  .right-section {
+    order: 1;
+    padding: 0;
+  }
+
+  .left-section {
+    display: block;
+    order: 2;
+  }
+}

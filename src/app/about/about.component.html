@@ -1,0 +1,30 @@
+<div class="about-container">
+  <div class="cv-button">
+    <button (click)="downloadCV()">Download My CV</button>
+  </div>
+
+  <div class="dropdown-section" *ngFor="let section of sections">
+    <div class="dropdown-header" (click)="toggleSection(section)" [class.open]="section.open">
+      <span>{{ section.title }}</span>
+      <ng-container *ngIf="section.title === 'Experience' || section.title === 'Education'">
+        <button class="download-btn" (click)="downloadSectionData(section)">
+          Download
+        </button>
+      </ng-container>
+      <span class="dropdown-icon">
+        <ng-container *ngIf="section.open; else closed">
+          ▼ 
+        </ng-container>
+        <ng-template #closed>
+          ▶ 
+        </ng-template>
+      </span>
+    </div>
+
+    <div class="dropdown-content" *ngIf="section.open">
+      <ul>
+        <li *ngFor="let item of section.items">{{ item }}</li>
+      </ul>
+    </div>
+  </div>
+</div>
