@@ -38,6 +38,13 @@ export class AboutComponent {
         'Strong proficiency in Algorithms and Problem Solving'
       ],
       open: false
+    },
+    {
+      title: 'Contact Me',
+      items: [
+        'mounirhaffar@outlook.com',
+      ],
+      open: false
     }
   ];  
 
@@ -47,7 +54,7 @@ export class AboutComponent {
 
   downloadCV() {
     const link = document.createElement('a');
-    link.href = 'CV version 2 (1).pdf';
+    link.href = 'CV.pdf';
     link.download = 'Mounir_CV.pdf';
     link.click();
   }
